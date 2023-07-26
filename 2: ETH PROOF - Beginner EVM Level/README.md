@@ -36,19 +36,27 @@ Ensure you have the necessary environment set up and the MyToken contract deploy
 
 1. Set the minter address:
 
-Before minting tokens, the contract owner (deployer) should call the setMinter function to set the minter address. Only the minter can mint new tokens.
+   Before minting tokens, the contract owner (deployer) should call the `mintTokens` function with the recipient's address and the amount of tokens to mint. Only the designated minter can execute this function.
 
-2. Mint tokens:
+   ```solidity
+   function mintTokens(address _to, uint256 _amount) public {
+       totalSupply += _amount;
+       balances[_to] += _amount;
+   }
+   ```
 
-To mint new tokens, call the mintTokens function with the recipient's address and the amount of tokens to mint. Only the designated minter can execute this function.
+2. Burn tokens:
 
-3. Burn tokens:
+   To burn tokens, call the `burnTokens` function with the sender's address and the amount of tokens to burn. This function will deduct the burned tokens from the total supply and the sender's balance. It also includes a `require` statement to ensure the sender has sufficient balance.
 
-To burn tokens, call the burnTokens function with the sender's address and the amount of tokens to burn. This function will deduct the burned tokens from the total supply and the sender's balance.
-
-4. Transfer tokens:
-
-Token holders can transfer tokens to other addresses by calling the transfer function. Ensure that the sender has sufficient balance to perform the transfer and that the destination address is valid.
+   ```solidity
+   function burnTokens(address _from, uint256 _amount) public {
+       require(balances[_from] >= _amount, "Insufficient balance");
+       
+       totalSupply -= _amount;
+       balances[_from] -= _amount;
+   }
+   ```
 
 ## Contributing
 
@@ -62,3 +70,6 @@ SUBHAM PAUL
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 This project is licensed under the MIT License. You are free to modify and distribute the code for personal and educational purposes.
 
+```
+
+The README.md file now includes an overview of the provided Solidity code, showcasing the functions `mintTokens` and `burnTokens`, as well as instructions for getting started with the project.
