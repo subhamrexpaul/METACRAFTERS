@@ -1,7 +1,5 @@
 # My Custom Token (MCT)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 ## Introduction
 
 This repository contains the source code for My Custom Token (MCT), an ERC-20 compliant token implemented on the Ethereum blockchain using Solidity.
@@ -61,6 +59,6 @@ Token holders can transfer tokens to other addresses by calling the transfer fun
 SUBHAM PAUL
 
 ## License
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 This project is licensed under the MIT License. You are free to modify and distribute the code for personal and educational purposes.
 
