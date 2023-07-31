@@ -12,7 +12,6 @@ The MyToken contract satisfies the following requirements:
 2. Uses a mapping to keep track of token balances for each address.
 3. Includes a `mintTokens` function to mint new tokens, which can only be called by a designated minter address.
 4. Implements a `burnTokens` function to burn tokens, reducing the total supply and the balance of the sender.
-5. Provides a `transfer` function that allows token holders to transfer tokens to other addresses.
 
 ## Getting Started
 
